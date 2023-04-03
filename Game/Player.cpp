@@ -26,10 +26,9 @@ void Player::Gravity()
 {
 	if (JumpState())
 	{
-		accelerator1 = accelerator1 + 0.035;
-		accelerator2 = accelerator2 + 0.035;
+		down = down + 0.06;
 		jumpHeight = jumpHeight + gravity;
-		Ypos = Ypos + gravity + accelerator1 + accelerator2 + jumpHeight;
+		Ypos = Ypos + gravity  + jumpHeight+down;
 		setDest(25, Ypos, 28, 38);
 		if (jumpHeight > 0)
 		{
@@ -40,9 +39,9 @@ void Player::Gravity()
 	else
 	{
 
-		accelerator1 = accelerator1 + 0.035;
-		accelerator2 = accelerator2 + 0.035;
-		Ypos = Ypos + gravity + accelerator1 + accelerator2;
+		down = down + 0.06;
+		
+		Ypos = Ypos + gravity + down;
 		setDest(25, Ypos, 28, 38);
 	}
 
@@ -52,8 +51,7 @@ void Player::Jump()
 {
 	if (jumpTimer - lastJump > 180)
 	{
-		accelerator1 = 0;
-		accelerator2 = 0;
+		down = 0;
 		inJump = true;
 		lastJump = jumpTimer;
 	}

@@ -12,6 +12,7 @@ int main(int argc, char** argv)
 		g->Event();
 		g->Update();
 		g->Render();
+		//limit 60 fps
 		first = SDL_GetTicks();
 		if (first - last < 16.7)
 		{
