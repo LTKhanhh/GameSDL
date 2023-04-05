@@ -6,6 +6,7 @@ int main(int argc, char** argv)
 {
 	double first;
 	double last = 0;
+	
 	g->Intialize();
 	while (g->getGameState())
 	{

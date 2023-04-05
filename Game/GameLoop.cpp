@@ -11,6 +11,8 @@ GameLoop::GameLoop()
 	ground1.setDest(0, 420, 112, 336);
 	ground2.setSrc(0, 0, 112, 336);
 	ground2.setDest(336, 420, 112, 336);
+	c.setSrc(0, 0, 64, 520);
+	
 }
 
 bool GameLoop::getGameState()
@@ -35,6 +37,8 @@ void GameLoop::Intialize()
 			b.CreateTexture("Image/background-day.png", renderer);
 			ground1.CreateTexture("Image/base.png", renderer);
 			ground2.CreateTexture("Image/base.png", renderer);
+			c.Createcol1("Image/bottomblock2.png", renderer);
+			c.Createcol2("Image/topblock2.png", renderer);
 		}
 		else
 		{
@@ -85,9 +89,11 @@ void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
 	b.Render(renderer);
+	c.Render(renderer);
 	//ground1.GroundRender(renderer);
 	//ground2.GroundRender(renderer);
 	p.Render(renderer);
+	
 	SDL_RenderPresent(renderer);
 }
 

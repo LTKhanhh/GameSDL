@@ -38,24 +38,21 @@ void Player::Gravity()
 	}
 	else
 	{
-
 		down = down + 0.06;
-		
 		Ypos = Ypos + gravity + down;
 		setDest(25, Ypos, 28, 38);
 	}
-
 }
 
 void Player::Jump()
 {
-	if (jumpTimer - lastJump > 180)
+	if (jumpTimer - lastJump > 160)  //inJump
 	{
 		down = 0;
 		inJump = true;
 		lastJump = jumpTimer;
 	}
-	else
+	else   //not inJump
 	{
 		Gravity();
 	}
