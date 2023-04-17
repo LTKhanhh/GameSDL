@@ -5,7 +5,7 @@ class Background :public Object
 {
 private:
 	int distance1 = 0;
-	int distance2 = 336;
+	int distance2 = 400;
 public:
 	void GroundUpdate1();
 	void GroundUpdate2();

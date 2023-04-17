@@ -6,20 +6,22 @@ int random(int x, int y)
     return rand() % (y - x + 1) + x;
 }
 
-void Block::setPos()
+Block::Block()
 {
     srand(time(0));
-    int x = random(250, 400);
-    int y = random(x, 700);
+    
+    int x = random(50, 150);
+    int y = random(x, 400);
     
     //Khoi tao cot shita
-    Col1.x = 800 - 100;
-    Col1.y = random(x, y);
+    Col1.x = 800;
+    Col1.h = random(x,y);
+    Col1.y = 530-Col1.h;
     Col1.w = COLUMN_WIDTH;
-    Col1.h = COLUMN_HEIGHT;
+    
     //Khoi tao cot ue
-    Col2.x = 800 - 100;
-    Col2.y = -gapspace + Col1.y - COLUMN_HEIGHT;
+    Col2.x = 800;
+    Col2.y = +Col1.y-gapspace-COLUMN_HEIGHT;
     Col2.w = COLUMN_WIDTH;
     Col2.h = COLUMN_HEIGHT;
 }
@@ -31,15 +33,10 @@ void Block::move()
     Col2.x -= speed;
 }
 
-void Block::Render(SDL_Renderer* ren) {
-    SDL_RenderCopy(ren, col1, &getSrc(), &Col1);
-    SDL_RenderCopy(ren, col2, &getSrc(), &Col1);
+void Block::RenderCol1(SDL_Renderer* ren, SDL_Texture* col) {
+    SDL_RenderCopy(ren, col, NULL, &Col1);
 }
-void Block::Createcol1(const char* address, SDL_Renderer* ren)
-{
-    col1 = TextureManager::Texture(address, ren);
-}
-void Block::Createcol2(const char* address, SDL_Renderer* ren)
-{
-    col2 = TextureManager::Texture(address, ren);
+
+void Block::RenderCol2(SDL_Renderer* ren, SDL_Texture* col) {
+    SDL_RenderCopy(ren, col, NULL, &Col2);
 }

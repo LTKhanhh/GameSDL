@@ -1,4 +1,5 @@
 #include"Object.h"
+#include <iostream>
 
 SDL_Texture* Object::getTexture()
 {

@@ -6,6 +6,8 @@ class Object
 private:
 	SDL_Rect src, dest;
 	SDL_Texture* Tex;
+	int width;
+	int height;
 public:
 
 	SDL_Texture* getTexture();

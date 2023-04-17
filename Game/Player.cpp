@@ -29,7 +29,7 @@ void Player::Gravity()
 		down = down + 0.06;
 		jumpHeight = jumpHeight + gravity;
 		Ypos = Ypos + gravity  + jumpHeight+down;
-		setDest(25, Ypos, 28, 38);
+		setDest(25, Ypos, 24, 34);
 		if (jumpHeight > 0)
 		{
 			inJump = false;
@@ -40,7 +40,7 @@ void Player::Gravity()
 	{
 		down = down + 0.06;
 		Ypos = Ypos + gravity + down;
-		setDest(25, Ypos, 28, 38);
+		setDest(25, Ypos, 24, 34);
 	}
 }
 
@@ -66,6 +66,12 @@ void Player::GetJumpTime()
 bool Player::JumpState()
 {
 	return inJump;
+}
+
+void Player::Reset()
+{
+	Ypos = 256;
+	down = 0;
 }
 
 void Player::CreateTexture1(const char* address, SDL_Renderer* ren)

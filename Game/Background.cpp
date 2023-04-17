@@ -12,29 +12,29 @@ void Background::GroundRender(SDL_Renderer* ren)
 
 void Background::GroundUpdate1()
 {
-	if (distance1 <= -330)
+	if (distance1 <= -400)
 	{
-		distance1 = 336;
+		distance1 = 400;
 	}
 	else
 	{
 		distance1--;
 		setSrc(0, 0, 112, 336);
-		setDest(distance1, 420, 112, 336);
+		setDest(distance1, 530, 112, 800);
 	}
 }
 
 void Background::GroundUpdate2()
 {
-	if (distance2 <= -330)
+	if (distance2 <= -400)
 	{
-		distance2 = 336;
+		distance2 = 400;
 	}
 	else
 	{
 		distance2--;
 		setSrc(0, 0, 112, 336);
-		setDest(distance2, 420, 112, 336);
+		setDest(distance2, 530, 112, 800);
 	}
 }
 

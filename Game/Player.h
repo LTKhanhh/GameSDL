@@ -5,7 +5,7 @@ class Player :public Object
 {
 private:
     double gravity = 0.2;
-    int Ypos = 256;
+    
     double down = 0;
     bool inJump = false;
     double jumpHeight = -6;
@@ -22,6 +22,8 @@ public:
     void CreateTexture1(const char* address, SDL_Renderer* ren);
     void CreateTexture2(const char* address, SDL_Renderer* ren);
     void Render(SDL_Renderer* ren);
+    void Reset();
+    int Ypos = 256;
 };
 
 

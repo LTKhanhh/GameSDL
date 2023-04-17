@@ -22,13 +22,17 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Point.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Block.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Point.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="TextureManager.h" />
@@ -88,8 +92,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\ADMIN\Downloads\SDL2-devel-2.26.4-VC\SDL2-2.26.4\include;C:\Users\ADMIN\Downloads\SDL2_image-devel-2.6.3-VC\SDL2_image-2.6.3\include;C:\Users\ADMIN\Downloads\SDL2_ttf-devel-2.20.2-VC\SDL2_ttf-2.20.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\ADMIN\Downloads\SDL2-devel-2.26.4-VC\SDL2-2.26.4\lib\x64;C:\Users\ADMIN\Downloads\SDL2_image-devel-2.6.3-VC\SDL2_image-2.6.3\lib\x64;C:\Users\ADMIN\Downloads\SDL2_ttf-devel-2.20.2-VC\SDL2_ttf-2.20.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\ADMIN\Downloads\SDL2-devel-2.26.4-VC\SDL2-2.26.4\include;C:\Users\ADMIN\Downloads\SDL2_image-devel-2.6.3-VC\SDL2_image-2.6.3\include;C:\Users\ADMIN\Downloads\SDL2_ttf-devel-2.20.2-VC\SDL2_ttf-2.20.2\include;C:\Users\ADMIN\Downloads\SDL2_mixer-devel-2.6.3-VC\SDL2_mixer-2.6.3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\ADMIN\Downloads\SDL2-devel-2.26.4-VC\SDL2-2.26.4\lib\x64;C:\Users\ADMIN\Downloads\SDL2_image-devel-2.6.3-VC\SDL2_image-2.6.3\lib\x64;C:\Users\ADMIN\Downloads\SDL2_ttf-devel-2.20.2-VC\SDL2_ttf-2.20.2\lib\x64;C:\Users\ADMIN\Downloads\SDL2_mixer-devel-2.6.3-VC\SDL2_mixer-2.6.3\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -129,7 +133,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2_image.lib;SDL2.lib;SDL2main.lib;SDL2_ttf.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

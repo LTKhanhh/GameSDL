@@ -8,19 +8,34 @@ int main(int argc, char** argv)
 	double last = 0;
 	
 	g->Intialize();
-	while (g->getGameState())
-	{
-		g->Event();
-		g->Update();
+
+	if (g->RenderMenu() ==0) {
 		g->Render();
-		//limit 60 fps
-		first = SDL_GetTicks();
-		if (first - last < 16.7)
+		g->Wait();
+		while (g->getGameState())
 		{
-			SDL_Delay(16.7 - (first - last));
+			if (g->getDie() == 0) {
+				g->Event();
+				g->Update();
+				g->Render();
+				//limit 60 fps
+				first = SDL_GetTicks();
+				if (first - last < 16.7)
+				{
+					SDL_Delay(16.7 - (first - last));
+				}
+				last = first;
+			}
+			else
+			{
+				g->RenderMenuLose();
+			}
 		}
-		last = first;
+		g->Clear();
 	}
-	g->Clear();
+	else {
+		g->Clear();
+	}
+	
 	return 0;
 }
