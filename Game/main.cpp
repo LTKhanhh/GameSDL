@@ -10,10 +10,13 @@ int main(int argc, char** argv)
 	g->Intialize();
 
 	if (g->RenderMenu() ==0) {
+		g->PlayMusic();
 		g->Render();
 		g->Wait();
+
 		while (g->getGameState())
 		{
+			
 			if (g->getDie() == 0) {
 				g->Event();
 				g->Update();
@@ -29,6 +32,12 @@ int main(int argc, char** argv)
 			else
 			{
 				g->RenderMenuLose();
+			}
+			if (g->getDie() == 1) {
+				Mix_PauseMusic();
+			}
+			else {
+				Mix_ResumeMusic();
 			}
 		}
 		g->Clear();

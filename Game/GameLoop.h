@@ -49,4 +49,5 @@ public:
 	int RenderMenu();
 	void RenderMenuLose();
 	void PlayAgain();
+	void PlayMusic();
 };

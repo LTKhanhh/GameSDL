@@ -80,8 +80,12 @@ void GameLoop::Intialize()
 	g_font_text = TTF_OpenFont("font/ARCADE.ttf", 48);
 	gJump = Mix_LoadWAV("sound/ting.wav");
 	gPunch= Mix_LoadWAV("sound/punch.wav");
+	gMusic = Mix_LoadMUS("sound/beat.wav");
 }
-
+void GameLoop::PlayMusic()
+{
+	Mix_PlayMusic(gMusic, -1);
+}
 void GameLoop::Event()
 {
 	p.GetJumpTime();
@@ -198,14 +202,14 @@ void GameLoop::Wait()
 }
 int GameLoop::RenderMenu() {
 	SDL_RenderClear(renderer);
-	int i=mn1.ShowMenu(renderer, g_font_text, "Play Game", "Exit", "Image/background-day.png");
+	int i=mn1.ShowMenu(renderer, g_font_text, "Play Game", "Exit", "Image/bgr1.png");
 	return i;
 }
 void GameLoop::RenderMenuLose()
 {
 	SDL_RenderClear(renderer);
 	
-	int i = mn1.ShowMenu1(renderer, g_font_text, "Play Again", "Exit","Your Score: "+ std::to_string(Point), "Image/background-day.png");
+	int i = mn1.ShowMenu1(renderer, g_font_text, "Play Again", "Exit","Your Score: "+ std::to_string(Point), "Image/bgr1.png");
 	if (i == 0)
 	{
 		PlayAgain();
@@ -239,7 +243,7 @@ void GameLoop::PlayAgain()
 	c.push_back(C);
 	Point = 0;
 	p.setDest(25, HEIGHT / 2, 24, 34);
-	p.Ypos = 256;
+	p.Ypos = 300;
 	Render();
 	Wait();
 }

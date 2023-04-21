@@ -10,8 +10,8 @@ Block::Block()
 {
     srand(time(0));
     
-    int x = random(50, 150);
-    int y = random(x, 400);
+    int x = random(70, 150);
+    int y = random(x, 350);
     
     //Khoi tao cot shita
     Col1.x = 800;

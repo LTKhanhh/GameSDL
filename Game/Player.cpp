@@ -46,7 +46,7 @@ void Player::Gravity()
 
 void Player::Jump()
 {
-	if (jumpTimer - lastJump > 160)  //inJump
+	if (jumpTimer - lastJump > 100)  //inJump
 	{
 		down = 0;
 		inJump = true;

@@ -23,7 +23,7 @@ public:
     void CreateTexture2(const char* address, SDL_Renderer* ren);
     void Render(SDL_Renderer* ren);
     void Reset();
-    int Ypos = 256;
+    int Ypos = 300;
 };
 
 

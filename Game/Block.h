@@ -23,8 +23,7 @@ private:
     const int COLUMN_HEIGHT = 400;
 
     // Khoang trong de chim bay qua
-    const int gapspace = 150;
-
+    const int gapspace = 140;
     int speed = 1;
 
 };
