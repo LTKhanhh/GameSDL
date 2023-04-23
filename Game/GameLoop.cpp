@@ -1,6 +1,7 @@
 #include"GameLoop.h"
 #include<string>
 TTF_Font* g_font_text ;
+TTF_Font* g_font_text1 ;
 Mix_Music* gMusic = NULL;
 Mix_Chunk* gJump = NULL;
 Mix_Chunk* gPunch = NULL;
@@ -10,7 +11,7 @@ GameLoop::GameLoop()
 	renderer = NULL;
 	GameState = false;
 	p.setSrc(0, 0, 24, 34);            //set source file image
-	p.setDest(25, HEIGHT / 2, 24, 34); //set dest file image 
+	p.setDest(200, HEIGHT / 2, 24, 34); //set dest file image 
 	ground1.setSrc(0, 0, 112, 336);
 	ground1.setDest(0, 530, 112, 800);
 	ground2.setSrc(0, 0, 112, 336);
@@ -78,6 +79,7 @@ void GameLoop::Intialize()
 	pt.setColor(Point::WHITE_TEXT);
 	pt_menu.setColor(Point::WHITE_TEXT);
 	g_font_text = TTF_OpenFont("font/ARCADE.ttf", 48);
+	g_font_text1 = TTF_OpenFont("font/ARCADE.ttf", 58);
 	gJump = Mix_LoadWAV("sound/ting.wav");
 	gPunch= Mix_LoadWAV("sound/punch.wav");
 	gMusic = Mix_LoadMUS("sound/beat.wav");
@@ -148,7 +150,7 @@ void GameLoop::Update()
 			isDie = true;
 			Mix_PlayChannel(-1, gPunch, 0);
 		}
-		if (c[i].Col1.x == 0) {
+		if (c[i].Col1.x == 160) {
 			Point++;
 			Mix_PlayChannel(-1, gJump, 0);
 		}
@@ -202,14 +204,14 @@ void GameLoop::Wait()
 }
 int GameLoop::RenderMenu() {
 	SDL_RenderClear(renderer);
-	int i=mn1.ShowMenu(renderer, g_font_text, "Play Game", "Exit", "Image/bgr1.png");
+	int i=mn1.ShowMenu(renderer, g_font_text, "Play Game", "Exit", "Image/Game start.png");
 	return i;
 }
 void GameLoop::RenderMenuLose()
 {
 	SDL_RenderClear(renderer);
 	
-	int i = mn1.ShowMenu1(renderer, g_font_text, "Play Again", "Exit","Your Score: "+ std::to_string(Point), "Image/bgr1.png");
+	int i = mn1.ShowMenu1(renderer, g_font_text1, "Play Again", "Exit","Your Score: "+ std::to_string(Point), "Image/Gameover1.png");
 	if (i == 0)
 	{
 		PlayAgain();
@@ -223,7 +225,13 @@ void GameLoop::RenderMenuLose()
 void GameLoop::Clear()
 {
 	SDL_DestroyRenderer(renderer);
+	renderer = NULL;
 	SDL_DestroyWindow(window);
+	window = NULL;
+	IMG_Quit();
+	TTF_Quit();
+	SDL_Quit();
+	Mix_HaltChannel(-1);
 }
 //Create texture column
 void GameLoop::Createcol1(const char* address, SDL_Renderer* ren)
@@ -242,8 +250,9 @@ void GameLoop::PlayAgain()
 	Block C;
 	c.push_back(C);
 	Point = 0;
-	p.setDest(25, HEIGHT / 2, 24, 34);
+	p.setDest(200, HEIGHT / 2, 24, 34);
 	p.Ypos = 300;
+	Mix_RewindMusic();
 	Render();
 	Wait();
 }

@@ -29,10 +29,10 @@ int Menu::ShowMenu(SDL_Renderer* ren, TTF_Font* font,
     text_menu[1].loadFromRenderedText(font, ren);
     //set rect of menu
     SDL_Rect pos[NoM];
-    pos[0].x = WIDTH * 0.3 - 150;
-    pos[0].y = HEIGHT * 0.8 - 40;
-    pos[1].x = WIDTH * 0.3 - 150;
-    pos[1].y = HEIGHT * 0.8 + 40;
+    pos[0].x = WIDTH * 0.8 - 170;
+    pos[0].y = HEIGHT * 0.5 - 40;
+    pos[1].x = WIDTH * 0.8 - 170;
+    pos[1].y = HEIGHT * 0.5 + 40;
 
     Background menu_bgr;
     menu_bgr.CreateTexture(imagefile, ren);
@@ -134,7 +134,7 @@ int Menu::ShowMenu1(SDL_Renderer* ren, TTF_Font* font,
     Menu[2] = select3;
     SDL_Texture* menu[NoM];
     bool selected[NoM] = { 0, 0 };
-    SDL_Color color[2] = { { 255, 255, 255 },{ 255, 0, 0 } };
+    SDL_Color color[3] = { { 255, 145, 0 },{ 255, 0, 0 },{255,255,255 } };
     Point text_menu[NoM];
     //text of menu1
     text_menu[0].SetText(Menu[0]);
@@ -145,7 +145,7 @@ int Menu::ShowMenu1(SDL_Renderer* ren, TTF_Font* font,
     text_menu[1].setColor(color[0].r, color[0].g, color[0].b);
     text_menu[1].loadFromRenderedText(font, ren);
     text_menu[2].SetText(Menu[2]);
-    text_menu[2].setColor(color[1].r, color[1].g, color[1].b);
+    text_menu[2].setColor(color[2].r, color[2].g, color[2].b);
     text_menu[2].loadFromRenderedText(font, ren);
     //set rect of menu
     SDL_Rect pos[NoM];
@@ -153,8 +153,8 @@ int Menu::ShowMenu1(SDL_Renderer* ren, TTF_Font* font,
     pos[0].y = HEIGHT * 0.8 - 40;
     pos[1].x = WIDTH * 0.3 - 150;
     pos[1].y = HEIGHT * 0.8 + 40;
-    pos[2].x = WIDTH * 0.3 - 150;
-    pos[2].y = HEIGHT * 0.8 - 120;
+    pos[2].x = WIDTH * 0.28;
+    pos[2].y = HEIGHT * 0.3;
     Background menu_bgr;
     menu_bgr.CreateTexture(imagefile, ren);
     SDL_Event event;
