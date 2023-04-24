@@ -16,8 +16,7 @@ GameLoop::GameLoop()
 	ground1.setDest(0, 530, 112, 800);
 	ground2.setSrc(0, 0, 112, 336);
 	ground2.setDest(400, 530, 112, 800);
-	massage.setSrc(0, 0, 267, 184);
-	massage.setDest(WIDTH / 2, HEIGHT / 2, 267, 184);
+	
 }
 
 bool GameLoop::getGameState()
@@ -47,7 +46,7 @@ void GameLoop::Intialize()
 			b.CreateTexture("Image/background.png", renderer);
 			ground1.CreateTexture("Image/base.png", renderer);
 			ground2.CreateTexture("Image/base.png", renderer);
-			massage.CreateTexture("Image/massage1.png", renderer);
+			
 			Createcol1("Image/pipe.png", renderer);
 			Createcol2("Image/pipe 2.png", renderer);
 			
@@ -99,6 +98,10 @@ void GameLoop::Event()
 	const Uint8 *keyboardstate = SDL_GetKeyboardState(NULL);
 	if (event1.type == SDL_KEYDOWN)
 	{
+		if (keyboardstate[SDL_SCANCODE_ESCAPE]) {
+			Wait();
+			
+		}
 		if (keyboardstate[SDL_SCANCODE_SPACE]|| keyboardstate[SDL_SCANCODE_UP] )
 		{
 			
@@ -141,22 +144,27 @@ void GameLoop::Update()
 	//update point
 	for (int i = 0; i < x; i++)
 	{
+		//collisions between birds and pipes
 		if (SDL_HasIntersection(&p.getDest(), &c[i].Col1) == SDL_TRUE || SDL_HasIntersection(&p.getDest(), &c[i].Col2) == SDL_TRUE)
 		{
 			isDie = true;
 			Mix_PlayChannel(-1, gPunch, 0);
 		}
+		//collisions between birds and ground
 		if (p.getDest().y >= ground1.getDest().y || p.getDest().y >= ground2.getDest().y) {
 			isDie = true;
 			Mix_PlayChannel(-1, gPunch, 0);
 		}
+		//pass pipes
 		if (c[i].Col1.x == 160) {
 			Point++;
 			Mix_PlayChannel(-1, gJump, 0);
 		}
 	}
+	//move ground
 	ground1.GroundUpdate1();
 	ground2.GroundUpdate2();
+	//prepare to render point
 	std::string count_str = std::to_string(Point);
 	pt.SetText(count_str);
 	pt.loadFromRenderedText(g_font_text, renderer);
@@ -164,11 +172,13 @@ void GameLoop::Update()
 void GameLoop::Render()
 {
 	SDL_RenderClear(renderer);
-	b.Render(renderer);            //render background
+	//render background
+	b.Render(renderer);    
+	//render ground
 	ground1.GroundRender(renderer);
 	ground2.GroundRender(renderer);
-	int x = c.size();
 	//render Column
+	int x = c.size();
 	for(int i=0; i<x; i++)
 	{ 
 		c[i].RenderCol1(renderer, col1);
@@ -183,7 +193,6 @@ void GameLoop::Render()
 //wait to play
 void GameLoop::Wait()
 {
-	massage.GroundRender(renderer);
 	while (1)
 	{
 		SDL_PollEvent(&event1);
@@ -195,7 +204,7 @@ void GameLoop::Wait()
 		else
 		{
 			if(event1.type == SDL_KEYDOWN)
-				if (event1.key.keysym.sym == SDLK_UP || event1.key.keysym.sym == SDLK_SPACE)
+				if (event1.key.keysym.sym == SDLK_UP || event1.key.keysym.sym == SDLK_SPACE|| event1.key.keysym.sym == SDLK_ESCAPE)
 				{
 					break;
 				}
@@ -251,7 +260,7 @@ void GameLoop::PlayAgain()
 	c.push_back(C);
 	Point = 0;
 	p.setDest(200, HEIGHT / 2, 24, 34);
-	p.Ypos = 300;
+	p.Reset();
 	Mix_RewindMusic();
 	Render();
 	Wait();

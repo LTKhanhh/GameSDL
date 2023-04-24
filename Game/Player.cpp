@@ -70,7 +70,7 @@ bool Player::JumpState()
 
 void Player::Reset()
 {
-	Ypos = 256;
+	Ypos = 300;
 	down = 0;
 }
 
@@ -83,11 +83,5 @@ void Player::CreateTexture2(const char* address, SDL_Renderer* ren)
 {
 	Tex2 = TextureManager::Texture(address, ren);
 }
-void Player::CreatePause(const char* address, SDL_Renderer* ren)
-{
-	Pause = TextureManager::Texture(address, ren);
-}
-void Player::CreateResume(const char* address, SDL_Renderer* ren)
-{
-	Resume = TextureManager::Texture(address, ren);
-}
+
+

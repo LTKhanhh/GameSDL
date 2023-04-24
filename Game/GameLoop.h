@@ -17,7 +17,6 @@ private:
 	Player p;
 	Background b;
 	Background ground1, ground2;
-	Background massage;
 	Point pt;
 	Point pt_menu;             
 	Menu mn1;

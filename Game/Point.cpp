@@ -9,12 +9,6 @@ Point::Point(void)
     text_color_.b = 255;
 }
 
-
-Point::~Point(void)
-{
-}
-
-
 bool Point::loadFromRenderedText(TTF_Font* gFont, SDL_Renderer* screen)
 {
     //Render text surface
@@ -38,14 +32,14 @@ bool Point::loadFromRenderedText(TTF_Font* gFont, SDL_Renderer* screen)
     return texture_ != NULL;
 }
 
-void Point::Free()
-{
-    if (texture_ != NULL)
-    {
-        SDL_DestroyTexture(texture_);
-        texture_ = NULL;
-    }
-}
+//void Point::Free()
+//{
+//    if (texture_ != NULL)
+//    {
+//        SDL_DestroyTexture(texture_);
+//        texture_ = NULL;
+//    }
+//}
 
 void Point::setColor(Uint8 red, Uint8 green, Uint8 blue)
 {
