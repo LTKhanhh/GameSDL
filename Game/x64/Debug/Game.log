@@ -1,24 +1,3 @@
-﻿  GameLoop.cpp
-C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(138,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(181,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(190,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Menu.cpp
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(32,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(33,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(34,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(35,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(113,28): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(18,18): warning C4101: 'menu': unreferenced local variable
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(152,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(153,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(154,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(155,29): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(156,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(157,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(229,28): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
-C:\Users\ADMIN\Desktop\Game\Game\Menu.cpp(135,18): warning C4101: 'menu': unreferenced local variable
-  Point.cpp
-  main.cpp
-C:\Users\ADMIN\Desktop\Game\Game\main.cpp(28,21): warning C4244: 'argument': conversion from 'double' to 'Uint32', possible loss of data
-  Generating Code...
+﻿  Block.cpp
+C:\Users\ADMIN\Desktop\Game\Game\Block.cpp(11,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Game.vcxproj -> C:\Users\ADMIN\Desktop\Game\x64\Debug\Game.exe

@@ -174,9 +174,6 @@ void GameLoop::Render()
 	SDL_RenderClear(renderer);
 	//render background
 	b.Render(renderer);    
-	//render ground
-	ground1.GroundRender(renderer);
-	ground2.GroundRender(renderer);
 	//render Column
 	int x = c.size();
 	for(int i=0; i<x; i++)
@@ -184,6 +181,9 @@ void GameLoop::Render()
 		c[i].RenderCol1(renderer, col1);
 		c[i].RenderCol2(renderer, col2);
 	}
+	//render ground
+	ground1.GroundRender(renderer);
+	ground2.GroundRender(renderer);
 	//render bird
 	p.Render(renderer);
 	//render point

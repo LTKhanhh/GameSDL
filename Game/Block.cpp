@@ -10,18 +10,18 @@ Block::Block()
 {
     srand(time(0));
     
-    int x = random(70, 150);
-    int y = random(x, 350);
+    int x = random(200, 300);
+    int y = random(x, 450);
     
     //Khoi tao cot shita
     Col1.x = 800;
-    Col1.h = random(x,y);
-    Col1.y = 530-Col1.h;
+    Col1.y = random(x,y);
     Col1.w = COLUMN_WIDTH;
+    Col1.h = COLUMN_HEIGHT;
     
     //Khoi tao cot ue
     Col2.x = 800;
-    Col2.y = +Col1.y-gapspace-COLUMN_HEIGHT;
+    Col2.y = Col1.y-gapspace-COLUMN_HEIGHT;
     Col2.w = COLUMN_WIDTH;
     Col2.h = COLUMN_HEIGHT;
 }
