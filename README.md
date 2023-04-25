@@ -28,4 +28,4 @@
 * Press ESC to pause.
 * Press ESC again to resume.
 ## Installation <a name="installation"></a>
-After installing SDL2, SDL_Image, SDL_TTF, và SDL_Mixer, run Flappy Bird.exe to enter the game.
+After installing SDL2, SDL_Image, SDL_TTF, và SDL_Mixer, run Game.exe to enter the game.
