@@ -4,6 +4,8 @@
 2. [Features](#features)
 3. [How to play](#play)
 4. [Installation](#installation)
+5. [Improvement](#improvement)
+6. [References](#references)
 ## Introduction <a name="introduction"></a>
 * The game is inspired by [Flappy Bird](https://wikipedia.org/wiki/Flappy_Bird) - the famous Vietnamese game developed by Nguyen Ha Dong in 2013.
 * Flappy Bird was created using [SDL2](https://www.libsdl.org/download-2.0.php) and C++.
@@ -29,3 +31,11 @@
 * Press ESC again to resume.
 ## Installation <a name="installation"></a>
 After installing SDL2, SDL_Image, SDL_TTF, và SDL_Mixer, run Game.exe to enter the game.
+## Improvement <a name="improvement"></a>
+* Display Pause Menu and score when pressing pause
+* Best score
+* Display bird drop when have collisions
+## References <a name="references"></a>
+* Youtube "Askari Hassan"
+* Youtube "Phattrienphanmem"
+* Lazy Foo
