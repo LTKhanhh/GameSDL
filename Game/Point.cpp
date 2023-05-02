@@ -32,15 +32,6 @@ bool Point::loadFromRenderedText(TTF_Font* gFont, SDL_Renderer* screen)
     return texture_ != NULL;
 }
 
-//void Point::Free()
-//{
-//    if (texture_ != NULL)
-//    {
-//        SDL_DestroyTexture(texture_);
-//        texture_ = NULL;
-//    }
-//}
-
 void Point::setColor(Uint8 red, Uint8 green, Uint8 blue)
 {
     text_color_.r = red;

@@ -1,3 +1,5 @@
-﻿  Block.cpp
-C:\Users\ADMIN\Desktop\Game\Game\Block.cpp(11,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  GameLoop.cpp
+C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(138,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(178,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\ADMIN\Desktop\Game\Game\GameLoop.cpp(190,32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Game.vcxproj -> C:\Users\ADMIN\Desktop\Game\x64\Debug\Game.exe

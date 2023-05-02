@@ -8,7 +8,6 @@ class Point
 public:
     Point(void);
     bool loadFromRenderedText(TTF_Font* gFont, SDL_Renderer* screen);
-    /*void Free();*/
     enum TextColor {
         RED_TEXT = 0,
         WHITE_TEXT = 1,
